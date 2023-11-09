@@ -31,11 +31,10 @@ import time
 import pandas as pd
 import json
 
-path = "pathtoyourchromedriver\chromedriver.exe"
+path = "chromedriver.exe"
 # download the chromedriver.exe from https://chromedriver.storage.googleapis.com/index.html?path=106.0.5249.21/
 
-# driver = webdriver.Chrome(path)
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(path)
 
 # Login
 def login():
