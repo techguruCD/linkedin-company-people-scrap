@@ -208,7 +208,7 @@
 #     time.sleep(10)
 #     driver.quit()
 
-from linkedin_scraper import Company, actions
+from linkedin_scraper import Person, Company, actions
 from selenium import webdriver
 
 driver = webdriver.Chrome()
@@ -217,5 +217,6 @@ password = "HondaRoyal0401!"
 
 actions.login(driver, email, password)
 
-company = Company("https://ca.linkedin.com/company/boostify", driver=driver)
-print(company)
+# company = Company("https://ca.linkedin.com/company/boostify", driver=driver)
+person = Person("https://www.linkedin.com/in/joey-sham-aa2a50122", driver=driver)
+print(person)
