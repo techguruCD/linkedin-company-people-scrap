@@ -1,7 +1,7 @@
 from LinkedIn import LinkedIn
 linkedin_email = "hovdikruslan@gmail.com"
 linkedin_password = "HondaRoyal0401!"
-target_company_link = "https://www.linkedin.com/company/unilever/"
+target_company_link = "https://www.linkedin.com/company/boostify/"
 if __name__ == "__main__":
     connection = LinkedIn()
     login_state = connection.login(linkedin_email, linkedin_password)

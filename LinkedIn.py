@@ -82,7 +82,7 @@ class LinkedIn:
                 emFile.write("Email\n")
             emFile.write(email + "\n")
 
-
+#  https://www.linkedin.com/search/results/people/?facetCurrentCompany=%5B%221248%22%5D&origin=COMPANY_PAGE_CANNED_SEARCH&page=1
 
     def listProfiles(self, company_id, page_no, need_count=False):
         print('1\n', 'https://www.linkedin.com/search/results/people/?facetCurrentCompany=%5B%22{}%22%5D&origin=COMPANY_PAGE_CANNED_SEARCH&page={}'.format(company_id, page_no))
