@@ -196,7 +196,7 @@ def returnProfileInfo(employeeLink, companyName):
     return profile
 
 if __name__ == "__main__":
-    companies = ['apple'] #, 'microsoft', 'amazon', 'tesla-motors', 'google', 'nvidia', 'berkshire-hathaway', 'meta', 'unitedhealth-group'
+    companies = ['google'] #, 'microsoft', 'amazon', 'tesla-motors', 'google', 'nvidia', 'berkshire-hathaway', 'meta', 'unitedhealth-group'
     login()
     employees = {}
     for company in companies:
