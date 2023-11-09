@@ -1,4 +1,4 @@
-from linkedin_scraper import Person, actions
+from linkedin_scraper import Person, actions, PersonSearch
 from selenium import webdriver
 driver = webdriver.Chrome()
 
