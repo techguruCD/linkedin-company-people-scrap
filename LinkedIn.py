@@ -1,25 +1,8 @@
-# -*- coding: utf-8 -*-
-# Last Changed: 30-09-2020
-# Author: Tufayel Ahmed
-# Github: https://www.github.com/TufayelLUS
-# LinkedIn: https://www.linkedin.com/in/tufayel-ahmed-cse/
-# For paid web scraping projects, contact in LinkedIn!
-# Follow me in github for more premium projects!
-# This script collects all *COMPANY WISE* profiles listed in linkedin
-# It collects profile details along with their email addresses
-
 import requests
 import re
 import csv
 import os
 from urllib.parse import quote
-
-
-# Script Configuration
-linkedin_email = "" # place your linkedin login email
-linkedin_password = "" # place your linkedin login password
-target_company_link = "https://www.linkedin.com/company/unilever/" # place company URL in mentioned format only! do not remove trailing slash
-# End Script Configuration
 
 class LinkedIn:
 
