@@ -8,6 +8,7 @@ if __name__ == "__main__":
     if login_state:
         print("Logged in to LinkedIn!")
         company_id = connection.getCompanyID(target_company_link)
+        print('company_id ', company_id)
         if company_id is not None:
             print("Collecting all company member profiles upto 10000!")
             profile_list, page_count = connection.listProfiles(company_id, 1, True)
