@@ -85,6 +85,7 @@ class LinkedIn:
 
 
     def listProfiles(self, company_id, page_no, need_count=False):
+        print('1\n', 'https://www.linkedin.com/search/results/people/?facetCurrentCompany=%5B%22{}%22%5D&origin=COMPANY_PAGE_CANNED_SEARCH&page={}'.format(company_id, page_no))
         resp = self.s.get('https://www.linkedin.com/search/results/people/?facetCurrentCompany=%5B%22{}%22%5D&origin=COMPANY_PAGE_CANNED_SEARCH&page={}'.format(company_id, page_no), headers=self.headers).text
         token = self.s.cookies.get_dict().get('JSESSIONID').replace('"','')
         headers = {
