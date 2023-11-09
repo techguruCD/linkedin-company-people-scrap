@@ -217,6 +217,6 @@ password = "HondaRoyal0401!"
 
 actions.login(driver, email, password)
 
-# company = Company("https://ca.linkedin.com/company/boostify", driver=driver)
-person = Person("https://www.linkedin.com/in/joey-sham-aa2a50122", driver=driver)
-print(person)
+company = Company("https://ca.linkedin.com/company/boostify", driver=driver, get_employees=False)
+# person = Person("https://www.linkedin.com/in/joey-sham-aa2a50122", driver=driver)
+print(company)
