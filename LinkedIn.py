@@ -101,7 +101,8 @@ class LinkedIn:
         }
         print('https://www.linkedin.com/voyager/api/search/blended?count=10&filters=List(currentCompany-%3E{},resultType-%3EPEOPLE)&origin=COMPANY_PAGE_CANNED_SEARCH&q=all&queryContext=List(spellCorrectionEnabled-%3Etrue)&start={}'.format(company_id,(int(page_no)-1) * 10))
         # resp = self.s.get('https://www.linkedin.com/voyager/api/search/blended?count=10&filters=List(currentCompany-%3E{},resultType-%3EPEOPLE)&origin=COMPANY_PAGE_CANNED_SEARCH&q=all&queryContext=List(spellCorrectionEnabled-%3Etrue)&start={}'.format(company_id,(int(page_no)-1) * 10), headers=headers).json()
-        resp = self.s.get('https://www.linkedin.com/voyager/api/graphql?variables=(start:0,origin:FACETED_SEARCH,query:(flagshipSearchIntent:SEARCH_SRP,queryParameters:List((key:currentCompany,value:List({})),(key:resultType,value:List(PEOPLE))),includeFiltersInResponse:false))'.format(company_id), headers=headers).json()
+        resp = self.s.get('https://www.linkedin.com/voyager/api/graphql?variables=(start:0,origin:FACETED_SEARCH,query:(flagshipSearchIntent:SEARCH_SRP,queryParameters:List((key:currentCompany,value:List({})),(key:resultType,value:List(PEOPLE))),includeFiltersInResponse:false))'.format(company_id), headers=headers)#.json()
+        print ('resp: ', resp)
         profiles = resp.get('data').get('elements')[0].get('elements')
         all_profile_links = []
         if need_count:
