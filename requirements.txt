@@ -1,1 +1,5 @@
 requests
+lxml
+selenium
+PySide6
+mongoengine

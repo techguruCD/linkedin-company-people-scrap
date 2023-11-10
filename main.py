@@ -23,7 +23,6 @@
 # #         print("Unable to login to LinkedIn!")
 
 
-
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
 # from bs4 import BeautifulSoup
@@ -208,17 +207,45 @@
 #     time.sleep(10)
 #     driver.quit()
 
+from PySide6 import (
+    QtCore,
+    QtGui
+)
+from PySide6.QtWidgets import (
+    QMainWindow,
+    QApplication
+)
+
 from linkedin_scraper import Person, Company, actions
 from selenium import webdriver
+import mongoengine
 
-driver = webdriver.Chrome()
-email = "hovdikruslan@gmail.com"
-password = "HondaRoyal0401!"
+import settings
 
-actions.login(driver, email, password)
 
-# company = Company("https://ca.linkedin.com/company/boostify", driver=driver, get_employees=False)
-company = Company("https://linkedin.com/company/boostify", driver=driver, get_employees=False, scrape=False)
-temp = company.get_employees(100)
-# person = Person("https://www.linkedin.com/in/joey-sham-aa2a50122", driver=driver)
-print(temp)
+class MainWindow(QMainWindow):
+    def __init__(self) -> None:
+        super().__init__()
+
+
+if __name__ == "__main__":
+    mongoengine.connect(host=settings.db['host'])
+    app = QApplication()
+    window = MainWindow()
+    window.show()
+    app.exec()
+    driver = webdriver.Chrome()
+    email = "hovdikruslan1@gmail.com"
+    password = "HondaRoyal0401!"
+
+    # try:
+    #     actions.login(driver, email, password)
+    # except:
+    #     print('login Failed')
+    # driver.quit()
+
+# # company = Company("https://ca.linkedin.com/company/boostify", driver=driver, get_employees=False)
+# company = Company("https://linkedin.com/company/boostify", driver=driver, get_employees=False, scrape=False)
+# temp = company.get_employees(100)
+# # person = Person("https://www.linkedin.com/in/joey-sham-aa2a50122", driver=driver)
+# print(temp)
